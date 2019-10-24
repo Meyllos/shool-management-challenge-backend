@@ -1,5 +1,5 @@
 import db from "../database/models"
-import { OK, BAD_REQUEST, NOT_FOUND } from '../constants/StatusCodes';
+import { OK, BAD_REQUEST, NOT_FOUND } from '../constants/statuscode';
 
 class CRUDOperations {
 

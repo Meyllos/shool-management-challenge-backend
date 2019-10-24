@@ -1,6 +1,6 @@
 import CRUD from '../../helpers/CRUD'
 import db from '../../database/models';
-import { OK, BAD_REQUEST, NOT_FOUND } from '../../constants/StatusCodes';
+import { OK, BAD_REQUEST, NOT_FOUND } from '../../constants/statuscode';
 import SignedToken from '../../helpers/Token';
 import Encrypt from '../../helpers/Encrypt';
 

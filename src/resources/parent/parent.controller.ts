@@ -1,8 +1,8 @@
 import CRUD from '../../helpers/CRUD'
 import db from '../../database/models';
-import { OK, BAD_REQUEST } from '../../constants/StatusCodes';
+import { OK, BAD_REQUEST } from '../../constants/statuscode';
 import Encrypt from '../../helpers/Encrypt';
-import { NOT_FOUND } from '../../constants/statusCodes';
+import { NOT_FOUND } from '../../constants/statuscode';
 import _ from 'lodash';
 import SignedToken from '../../helpers/Token';
 
