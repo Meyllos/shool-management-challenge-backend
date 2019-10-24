@@ -1,6 +1,7 @@
 import * as Sequelize from 'sequelize';
 import { SequelizeAttributes }  from '../../types'
 import { ParentAttributes } from './interface';
+import Encrypt from '../../helpers/Encrypt';
 
 // instance
 export type ParentInstance = Sequelize.Instance<ParentAttributes> & ParentAttributes
@@ -37,7 +38,12 @@ export const ParentInit = (sequelize: Sequelize.Sequelize, Sequelize: Sequelize.
       type: Sequelize.UUID
     },
     password: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      validate: {
+        validate() {
+          this.password = Encrypt.encrypt(this.password);
+        }
+      }
     },
     phone: {
       type: Sequelize.BIGINT,

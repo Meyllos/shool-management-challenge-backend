@@ -3,28 +3,34 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('parents', {
       id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
+      allowNull: false,
+      primaryKey: true,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV4
+    },
       firstname: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+      allowNull: false,
       },
       lastname: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+      allowNull: false,
       },
       student: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+      allowNull: false,
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+      allowNull: false,
       },
       phone: {
-        type: Sequelize.BIGINT
+        type: Sequelize.BIGINT,
+      allowNull: false,
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+      allowNull: false,
       },
       createdAt: {
         allowNull: false,
