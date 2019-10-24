@@ -1,8 +1,7 @@
 import express from 'express';
 import { celebrate } from 'celebrate'
 import Student from './student.controller';
-import {register } from './validations'
-import { id, update } from './validations/index';
+import { id, update, register } from './validations';
 
 const student = new Student();
 
