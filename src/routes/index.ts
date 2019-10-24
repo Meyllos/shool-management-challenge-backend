@@ -5,7 +5,7 @@ import parent_routers from '../resources/parent/parent.routes';
 
 const app = express();
 
-app.use('/teacher', teacher_routers)
+app.use('/teachers', teacher_routers)
 app.use('/attendance', teacher_routers)
 app.use('/parents', parent_routers)
 app.use('/students', student_routes)

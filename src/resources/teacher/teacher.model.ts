@@ -1,6 +1,7 @@
 import * as Sequelize from 'sequelize';
 import { SequelizeAttributes }  from '../../types'
 import { TeacherAttributes } from './interface';
+import Encrypt from '../../helpers/Encrypt';
 
 // instance
 export type TeacherInstance = Sequelize.Instance<TeacherAttributes> & TeacherAttributes
@@ -37,7 +38,12 @@ export const TeacherInit = (sequelize: Sequelize.Sequelize, Sequelize: Sequelize
       type: Sequelize.FLOAT
     },
     password: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      validate: {
+        validate() {
+          this.password = Encrypt.encrypt(this.password);
+        }
+      }
     },
     phone: {
       type: Sequelize.BIGINT
@@ -49,7 +55,7 @@ export const TeacherInit = (sequelize: Sequelize.Sequelize, Sequelize: Sequelize
       }
     },
     courses: {
-      type: Sequelize.ARRAY,
+      type: Sequelize.ARRAY(Sequelize.STRING),
       allowNull: false
     },
      createdAt: {
