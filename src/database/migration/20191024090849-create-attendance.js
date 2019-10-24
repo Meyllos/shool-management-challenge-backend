@@ -9,19 +9,24 @@ module.exports = {
       defaultValue: Sequelize.UUIDV4
     },
       student: {
-        type: Sequelize.STRING,
+        type: Sequelize.UUID,
       allowNull: false,
+      },
+      class_level: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       day: {
         type: Sequelize.DATE,
       allowNull: false,
+      defaultValue: Date.now()
       },
       course: {
         type: Sequelize.STRING,
       allowNull: false,
       },
       teacher: {
-        type: Sequelize.STRING,
+        type: Sequelize.UUID,
       allowNull: false,
       },
       description: {

@@ -1,24 +1,31 @@
 import express from 'express';
 import { celebrate } from 'celebrate'
 import Attendance from './attendance.controller';
-import validation from './validations'
+import { record, update } from './validations'
 
 const attendance = new Attendance();
 
 /** ******************************************* */
 
-const teacher_routers = express.Router();
+const attendance_routers = express.Router();
 
 /** ******************************************* */
 
-teacher_routers
+
+attendance_routers
 .route('/')
 .all()
-.get(attendance.createOne)
+.put(celebrate({ body: update }), attendance.update)
+.post(celebrate({ body: record }), attendance.createOne)
 
-teacher_routers
-.route('/register')
+attendance_routers
+.route('/:id')
 .all()
-.post(attendance.readOne)
+.put(celebrate({ body: update }), attendance.update)
 
-export default teacher_routers;
+attendance_routers
+.route('/return')
+.all()
+.get(attendance.getAttendances)
+
+export default attendance_routers;

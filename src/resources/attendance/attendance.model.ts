@@ -14,15 +14,19 @@ export const AttendanceInit = (sequelize: Sequelize.Sequelize, Sequelize: Sequel
       defaultValue: Sequelize.UUIDV4
     },
     student: {
-      type: Sequelize.STRING
+      type: Sequelize.UUID
     },
+    class_level: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
     day: {
       type: Sequelize.DATE,
       allowNull: false,
       defaultValue: Date.now()
     },
     teacher: {
-      type: Sequelize.STRING,
+      type: Sequelize.UUID,
       allowNull: false,
     },
     course: {

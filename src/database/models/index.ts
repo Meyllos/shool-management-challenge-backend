@@ -4,6 +4,7 @@ import { DBInterface } from '../interface/index';
 import { StudentInit } from '../../resources/student/student.model';
 import { ParentInit } from '../../resources/parent/parent.model';
 import { TeacherInit } from '../../resources/teacher/teacher.model';
+import { AttendanceInit } from '../../resources/attendance/attendance.model';
 
 dotenv.config()
 
@@ -18,7 +19,8 @@ const db: DBInterface = {
   Sequelize: Sequelize.Sequelize,
   Student: StudentInit(sequelize, Sequelize),
   Parent: ParentInit(sequelize, Sequelize),
-  Teacher: TeacherInit(sequelize, Sequelize)
+  Teacher: TeacherInit(sequelize, Sequelize),
+  Attendance: AttendanceInit(sequelize, Sequelize)
 }
 
 Object.keys(db).forEach((ModelName) => {

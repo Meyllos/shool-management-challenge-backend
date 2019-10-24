@@ -5,6 +5,8 @@ import { ParentInstance } from '../../resources/parent/parent.model';
 import { ParentAttributes } from '../../resources/parent/interface';
 import { TeacherInstance } from '../../resources/teacher/teacher.model';
 import { TeacherAttributes } from '../../resources/teacher/interface';
+import { AttendanceInstance } from '../../resources/attendance/attendance.model';
+import { AttendanceAttributes } from '../../resources/attendance/interface';
 
 export interface DBInterface {
     sequelize: Sequelize.Sequelize;
@@ -12,4 +14,5 @@ export interface DBInterface {
     Student: Sequelize.Model<StudentInstance, StudentAttributes>
     Parent: Sequelize.Model<ParentInstance, ParentAttributes>
     Teacher: Sequelize.Model<TeacherInstance, TeacherAttributes>
+    Attendance: Sequelize.Model<AttendanceInstance, AttendanceAttributes>
 }
